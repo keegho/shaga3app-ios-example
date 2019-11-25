@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ocg-ck-nF7">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--DEGLAWY-->
+        <scene sceneID="oX9-U0-IIF">
+            <objects>
+                <viewController id="ASz-gf-OOY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YDK-Dm-Gh3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Ecm-jp-ugi"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="DEGLAWY" image="g" id="0cH-gj-IZu">
+                        <color key="badgeColor" red="0.98696440460000001" green="0.87859749789999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7FO-Wm-ECs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="1289"/>
+        </scene>
+        <!--HOME-->
+        <scene sceneID="hG1-4e-B6r">
+            <objects>
+                <viewController id="mZ6-J2-NrL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rWb-qs-VQH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="agk-yo-YUN"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="HOME" image="homeUnSelected" id="QP0-uk-xLo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yQW-dH-Jpj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="378" y="-206"/>
+        </scene>
+        <!--SPORTS-->
+        <scene sceneID="7NW-G9-qXc">
+            <objects>
+                <viewController id="J3a-O9-vV6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RZx-dy-mkL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XBk-bg-mij"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="SPORTS" image="run" id="MXh-ja-0tc">
+                        <color key="badgeColor" red="0.98696440460000001" green="0.87859749789999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AX4-CF-e9D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="549"/>
+        </scene>
+        <!--MENU-->
+        <scene sceneID="lv6-Hf-TIL">
+            <objects>
+                <viewController id="Bss-Xb-G3V" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mGv-Iz-LwX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="yBW-iW-ngg"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="MENU" image="burger" id="PLF-10-F6Y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1w-Q2-P47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="2810"/>
+        </scene>
+        <!--COMPETITION-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="COMPETITION" id="BYZ-38-t0r" customClass="ViewController" customModule="Shaga3_Web" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bC-R9-hDw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0bC-R9-hDw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LlV-Jy-Uax"/>
+                            <constraint firstItem="0bC-R9-hDw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e4K-8c-k5X"/>
+                            <constraint firstItem="0bC-R9-hDw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eC4-GQ-tZG"/>
+                            <constraint firstItem="0bC-R9-hDw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="l28-Ll-GpS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="COMPETITION" image="cup" id="jF3-5g-0cT"/>
+                    <navigationItem key="navigationItem" title="COMPETITION" id="ha2-An-jHf">
+                        <barButtonItem key="backBarButtonItem" title="&lt;-" id="68W-5m-H7g"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="0bC-R9-hDw" id="gdf-0V-bA7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="2017"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ove-qM-oVL">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ocg-ck-nF7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="BN6-eb-ntC">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.98696440460000001" green="0.87859749789999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.98696440460000001" green="0.87859749789999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mZ6-J2-NrL" kind="relationship" relationship="viewControllers" id="2BN-vd-eiZ"/>
+                        <segue destination="ASz-gf-OOY" kind="relationship" relationship="viewControllers" id="nfq-xc-uSD"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="4EP-RQ-aze"/>
+                        <segue destination="J3a-O9-vV6" kind="relationship" relationship="viewControllers" id="gi6-XU-TsD"/>
+                        <segue destination="Bss-Xb-G3V" kind="relationship" relationship="viewControllers" id="eyc-Is-aCc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lim-pK-JXf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1788" y="1048"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="burger" width="37" height="30"/>
+        <image name="cup" width="32" height="32"/>
+        <image name="g" width="13.5" height="19.5"/>
+        <image name="homeUnSelected" width="29.5" height="24"/>
+        <image name="run" width="32" height="32"/>
+    </resources>
+</document>

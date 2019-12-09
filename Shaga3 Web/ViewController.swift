@@ -31,7 +31,9 @@ class ViewController: UIViewController {
         }
         
         webView.uiDelegate = self
-        webView.configuration.preferences.javaScriptEnabled = true
+       // webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
+       // webView.configuration.preferences.javaScriptEnabled = true
+        //webView.configuration.preferences.plugInsEnabled = true
         webView.navigationDelegate = self
         
         let url = URL(string: "https://backend.shaga3app.com/api/authorize?user_name=\(sherifDegla.name)&user_uuid=\(sherifDegla.uuid)")
@@ -84,6 +86,17 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         
+       // webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
+        // webView.configuration.preferences.plugInsEnabled = true
+       //  webView.configuration.preferences.javaScriptEnabled = true
+        
+        //if navigationAction.targetFrame?.isMainFrame == nil {
+       //     UIApplication.shared.open(navigationAction.request.url!)
+            
+        //    webView.load(navigationAction.request)
+      //  }
+       // return nil
+        
         if navigationAction.targetFrame == nil {
             
             let tempURL = navigationAction.request.url
@@ -92,7 +105,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
             components.host = tempURL?.host
             components.path = tempURL!.path
             
-            let webViewTemp = WKWebView(frame: .zero, configuration: configuration)
+            let webViewTemp = WKWebView(frame: self.webView.bounds, configuration: configuration)
             webViewTemp.uiDelegate = self
             webViewTemp.navigationDelegate = self
             self.view.addSubview(webViewTemp)
@@ -110,9 +123,9 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
         
             
             
-            webViewTemp.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
-            //webViewTemp.configuration.preferences.plugInsEnabled = true
-            webViewTemp.configuration.preferences.javaScriptEnabled = true
+           // webViewTemp.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
+           // webViewTemp.configuration.preferences.plugInsEnabled = true
+          //  webViewTemp.configuration.preferences.javaScriptEnabled = true
             
             return webViewTemp
         }
@@ -127,7 +140,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
-        if let host = navigationAction.request.url?.host {
+        /*if let host = navigationAction.request.url?.host {
             if host.contains("facebook.com") || host.contains("whatsapp")  {
                 let newUrl = navigationAction.request.url?.absoluteString.replacingOccurrences(of: "https://www.facebook.com/", with: "")
                 print(newUrl ?? "NO URL")
@@ -139,7 +152,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
             } //else if host.contains("shaga3app.com") {
             //    decisionHandler(.allow)
            // }
-        }
+        }*/
 
         decisionHandler(.allow)
         self.dismiss(animated: true)

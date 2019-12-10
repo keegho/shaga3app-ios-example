@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     override func loadView() {
          let webConfiguration = WKWebViewConfiguration()
-               webConfiguration.allowsInlineMediaPlayback = true
+              // webConfiguration.allowsInlineMediaPlayback = true
                webConfiguration.mediaPlaybackRequiresUserAction = false
                webView = WKWebView(frame: .zero, configuration: webConfiguration)
                webView!.navigationDelegate = self

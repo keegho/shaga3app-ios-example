@@ -18,23 +18,40 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
     
+    
+    override func loadView() {
+         let webConfiguration = WKWebViewConfiguration()
+               webConfiguration.allowsInlineMediaPlayback = true
+               webConfiguration.mediaPlaybackRequiresUserAction = false
+               webView = WKWebView(frame: .zero, configuration: webConfiguration)
+               webView!.navigationDelegate = self
+               webView!.uiDelegate = self
+            view = webView
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let config = WKWebViewConfiguration()
+//        config.dataDetectorTypes = [.all]
+//        webView = WKWebView(frame: .zero, configuration: config)
+        
         
         let deglaUser = User(name: "Vahan", uuid: "31531e13fgea") //Degla User
         let sherifDegla = User(name: "sherif", uuid: "346grs")
        
         if #available(iOS 13.0, *) {
-            webView.setupActivityIndicator(style: .large, color: .yellow)
-        } else {
-            webView.setupActivityIndicator(style: .whiteLarge, color: .yellow)
-        }
+                          webView.setupActivityIndicator(style: .large, color: .yellow)
+                      } else {
+                          webView.setupActivityIndicator(style: .whiteLarge, color: .yellow)
+                      }
+       
         
-        webView.uiDelegate = self
        // webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
        // webView.configuration.preferences.javaScriptEnabled = true
         //webView.configuration.preferences.plugInsEnabled = true
-        webView.navigationDelegate = self
+ 
         
         let url = URL(string: "https://backend.shaga3app.com/api/authorize?user_name=\(sherifDegla.name)&user_uuid=\(sherifDegla.uuid)")
         
@@ -48,12 +65,14 @@ class ViewController: UIViewController {
 
     }
     
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
 
 
 }
+
 
 
 extension ViewController: WKUIDelegate, WKNavigationDelegate {
@@ -85,7 +104,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-        
+        print("IM HERE IN CREATEWEBVIEW")
        // webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
         // webView.configuration.preferences.plugInsEnabled = true
        //  webView.configuration.preferences.javaScriptEnabled = true
@@ -139,8 +158,10 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        print("IM HERE IN DECIDE POLICY FOR")
         
-        /*if let host = navigationAction.request.url?.host {
+        
+        if let host = navigationAction.request.url?.host {
             if host.contains("facebook.com") || host.contains("whatsapp")  {
                 let newUrl = navigationAction.request.url?.absoluteString.replacingOccurrences(of: "https://www.facebook.com/", with: "")
                 print(newUrl ?? "NO URL")
@@ -152,9 +173,9 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
             } //else if host.contains("shaga3app.com") {
             //    decisionHandler(.allow)
            // }
-        }*/
+        }
 
         decisionHandler(.allow)
-        self.dismiss(animated: true)
+       // self.dismiss(animated: true)
     }
 }

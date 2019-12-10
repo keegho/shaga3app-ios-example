@@ -12,20 +12,25 @@ import WebKit
 
 class ViewController: UIViewController {
     
+    
+    
     let signature = "3f75148a3cc42d2a086118d53b62983ea71b6a92a1091e3525cf483bae26c482" //Get from degla server
     let signatureSherif = "96482ab7d8ba729c942c30d6b144dd7abd5afd4b13ec03d0e0778f9b1ba03d63"
     let key = "degla" //Predefined key
 
     @IBOutlet weak var webView: WKWebView!
     
+   
     
     override func loadView() {
+        
          let webConfiguration = WKWebViewConfiguration()
               // webConfiguration.allowsInlineMediaPlayback = true
                webConfiguration.mediaPlaybackRequiresUserAction = false
                webView = WKWebView(frame: .zero, configuration: webConfiguration)
                webView!.navigationDelegate = self
                webView!.uiDelegate = self
+            //WKWebView.clean()
             view = webView
         
     }
@@ -36,7 +41,6 @@ class ViewController: UIViewController {
 //        let config = WKWebViewConfiguration()
 //        config.dataDetectorTypes = [.all]
 //        webView = WKWebView(frame: .zero, configuration: config)
-        
         
         let deglaUser = User(name: "Vahan", uuid: "31531e13fgea") //Degla User
         let sherifDegla = User(name: "sherif", uuid: "346grs")
@@ -77,6 +81,10 @@ class ViewController: UIViewController {
 
 extension ViewController: WKUIDelegate, WKNavigationDelegate {
     
+    func webViewDidClose(_ webView: WKWebView) {
+        webView.removeFromSuperview()
+    }
+    
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         webView.activityIndicatorView.startAnimating()
@@ -105,6 +113,9 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         print("IM HERE IN CREATEWEBVIEW")
+        
+        webView.load(navigationAction.request)
+        
        // webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
         // webView.configuration.preferences.plugInsEnabled = true
        //  webView.configuration.preferences.javaScriptEnabled = true
@@ -116,7 +127,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
       //  }
        // return nil
         
-        if navigationAction.targetFrame == nil {
+      /*  if navigationAction.targetFrame == nil {
             
             let tempURL = navigationAction.request.url
             var components = URLComponents()
@@ -147,7 +158,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
           //  webViewTemp.configuration.preferences.javaScriptEnabled = true
             
             return webViewTemp
-        }
+        }*/
         
         return nil
     }
@@ -165,7 +176,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
             if host.contains("facebook.com") || host.contains("whatsapp")  {
                 let newUrl = navigationAction.request.url?.absoluteString.replacingOccurrences(of: "https://www.facebook.com/", with: "")
                 print(newUrl ?? "NO URL")
-               // UIApplication.shared.open(URL(string: "fb://\(newUrl ?? "")")!)
+                //UIApplication.shared.open(URL(string: "fb://\(newUrl ?? "")")!)
                // UIApplication.shared.canOpenURL(navigationAction.request.url!)
                 UIApplication.shared.open(navigationAction.request.url!)
                 decisionHandler(.cancel)
@@ -177,5 +188,23 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
 
         decisionHandler(.allow)
        // self.dismiss(animated: true)
+    }
+}
+
+
+extension WKWebView {
+    class func clean() {
+        guard #available(iOS 9.0, *) else {return}
+
+        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
+
+        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            records.forEach { record in
+                WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
+                #if DEBUG
+                    print("WKWebsiteDataStore record deleted:", record)
+                #endif
+            }
+        }
     }
 }

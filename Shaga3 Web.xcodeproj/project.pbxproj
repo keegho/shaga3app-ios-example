@@ -15,11 +15,13 @@
 		282374042358D6260065B4D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282374032358D6260065B4D0 /* Assets.xcassets */; };
 		282374072358D6260065B4D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282374052358D6260065B4D0 /* LaunchScreen.storyboard */; };
 		2823740F2358D7620065B4D0 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2823740E2358D7620065B4D0 /* UIViewExt.swift */; };
+		284A174E23B0EE4A0027A3CA /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284A174D23B0EE4A0027A3CA /* MoreViewController.swift */; };
+		284A175023B0F50F0027A3CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284A174F23B0F50F0027A3CA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		280A09B32379C8AA00151F7E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		282373F72358D6240065B4D0 /* DeglaComp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeglaComp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		282373F72358D6240065B4D0 /* DeglaCompS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeglaCompS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282373FA2358D6240065B4D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		282373FC2358D6240065B4D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		282373FE2358D6240065B4D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		282374062358D6260065B4D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		282374082358D6260065B4D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2823740E2358D7620065B4D0 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		284A174D23B0EE4A0027A3CA /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		284A174F23B0F50F0027A3CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,7 @@
 		282373F82358D6240065B4D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				282373F72358D6240065B4D0 /* DeglaComp.app */,
+				282373F72358D6240065B4D0 /* DeglaCompS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,11 +68,13 @@
 				282373FA2358D6240065B4D0 /* AppDelegate.swift */,
 				282373FC2358D6240065B4D0 /* SceneDelegate.swift */,
 				282373FE2358D6240065B4D0 /* ViewController.swift */,
+				284A174D23B0EE4A0027A3CA /* MoreViewController.swift */,
 				282374002358D6240065B4D0 /* Main.storyboard */,
 				282374032358D6260065B4D0 /* Assets.xcassets */,
 				282374052358D6260065B4D0 /* LaunchScreen.storyboard */,
 				282374082358D6260065B4D0 /* Info.plist */,
 				2823740E2358D7620065B4D0 /* UIViewExt.swift */,
+				284A174F23B0F50F0027A3CA /* Constants.swift */,
 			);
 			path = "Shaga3 Web";
 			sourceTree = "<group>";
@@ -90,7 +96,7 @@
 			);
 			name = "Shaga3 Web";
 			productName = "Shaga3 Web";
-			productReference = 282373F72358D6240065B4D0 /* DeglaComp.app */;
+			productReference = 282373F72358D6240065B4D0 /* DeglaCompS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -147,6 +153,8 @@
 				2823740F2358D7620065B4D0 /* UIViewExt.swift in Sources */,
 				282373FF2358D6240065B4D0 /* ViewController.swift in Sources */,
 				282373FB2358D6240065B4D0 /* AppDelegate.swift in Sources */,
+				284A174E23B0EE4A0027A3CA /* MoreViewController.swift in Sources */,
+				284A175023B0F50F0027A3CA /* Constants.swift in Sources */,
 				280A09B42379C8AA00151F7E /* User.swift in Sources */,
 				282373FD2358D6240065B4D0 /* SceneDelegate.swift in Sources */,
 			);
@@ -300,8 +308,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.idesignadv.DeglaComp;
-				PRODUCT_NAME = DeglaComp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idesignadv.DeglaCompSherif;
+				PRODUCT_NAME = DeglaCompS;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -319,8 +327,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.idesignadv.DeglaComp;
-				PRODUCT_NAME = DeglaComp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idesignadv.DeglaCompSherif;
+				PRODUCT_NAME = DeglaCompS;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

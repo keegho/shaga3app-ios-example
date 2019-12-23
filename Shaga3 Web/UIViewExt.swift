@@ -63,3 +63,17 @@ public extension NSObject {
         return valueAsType
     }
 }
+
+extension Notification.Name {
+    static let selectedUserChanged = Notification.Name("on-selected-user-change")
+}
+
+
+extension UIViewController {
+  func alert(message: String, title: String = "") {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+  }
+}

@@ -224,7 +224,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
         print("IM HERE IN DECIDE POLICY FOR ACTION")
         
         
-        if let host = navigationAction.request.url?.host {
+       /* if let host = navigationAction.request.url?.host {
             if host.contains("facebook.com") || host.contains("whatsapp")  {
                 let newUrl = navigationAction.request.url?.absoluteString.replacingOccurrences(of: "https://www.facebook.com/", with: "")
                 print(newUrl ?? "NO URL")
@@ -236,7 +236,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
             } //else if host.contains("shaga3app.com") {
             //    decisionHandler(.allow)
            // }
-        }
+        } */
 
         decisionHandler(.allow)
        // self.dismiss(animated: true)

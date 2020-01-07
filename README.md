@@ -1,7 +1,7 @@
 ![Imgur Image](https://i.imgur.com/PuGTPGT.png)
 
 </p>
-<p align="center">
+<p align="left">
     <a href="" alt="Version">
         <img src="https://img.shields.io/badge/version-1.0-blue" /></a>
     <a href="" alt="swift">

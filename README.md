@@ -58,6 +58,10 @@ Just add a `WKWebView` to your `UIViewController` call its delegate functions an
 import UIKit
 import WebKit
 
+let key = "degla" //Predefined key
+
+@IBOutlet weak var webView: WKWebView!
+
 override func viewDidLoad() {
 
      super.viewDidLoad()

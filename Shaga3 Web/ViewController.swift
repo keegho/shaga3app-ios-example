@@ -88,7 +88,7 @@ class ViewController: UIViewController {
            print(Constants.selectedUser.name)
         let url = URL(string: "https://backend.shaga3app.com/api/authorize?user_name=\(Constants.selectedUser.name)&user_uuid=\(Constants.selectedUser.uuid)")
                
-               var request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 15)
+        var request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 15)
                
         request.setValue(Constants.selectedUser.signature, forHTTPHeaderField:"x-auth-signature")
                request.setValue(key, forHTTPHeaderField:"x-shaga3app-id")
@@ -106,8 +106,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
     func webViewDidClose(_ webView: WKWebView) {
         webView.removeFromSuperview()
     }
-    
-    
+
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         webView.activityIndicatorView.startAnimating()
     }
@@ -135,8 +134,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-        print("IM HERE IN CREATEWEBVIEW")
-        
+
         webView.load(navigationAction.request)
         
         return nil
@@ -148,8 +146,6 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        print("IM HERE IN DECIDE POLICY FOR ACTION")
-        
         
             if (navigationAction.request.url?.absoluteString.contains("www"))! {//if host.contains("apple")  {
                 if let url = navigationAction.request.url {
@@ -170,7 +166,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        print("IM HERE IN DECIDE POLICY FOR RESPONSE")
+
         decisionHandler(.allow)
     }
 }

@@ -14,9 +14,7 @@ class ViewController: UIViewController {
     
     
     
-   // let signature = "3f75148a3cc42d2a086118d53b62983ea71b6a92a1091e3525cf483bae26c482" //Get from degla server
-   // let sherifSignature = "96482ab7d8ba729c942c30d6b144dd7abd5afd4b13ec03d0e0778f9b1ba03d63"
-   // let guestSignature = "e20d6020cf3659c9cce3c738578fc10782aea1ba11612dd78d98a2b44f044f10"
+   // let signature = "3f75148a3cc42d2a086118d53b62983ea71b6a92a1091e3525cf483bae26c482" //Get from server usin HMAC
     
     let key = "degla" //Predefined key
 
@@ -25,16 +23,16 @@ class ViewController: UIViewController {
     
     override func loadView() {
         
-         let webConfiguration = WKWebViewConfiguration()
-              // webConfiguration.allowsInlineMediaPlayback = true
-               webConfiguration.mediaPlaybackRequiresUserAction = false
+       let webConfiguration = WKWebViewConfiguration()
+        // webConfiguration.allowsInlineMediaPlayback = true
+       webConfiguration.mediaPlaybackRequiresUserAction = false
         
-        webConfiguration.allowsPictureInPictureMediaPlayback = true
-               webView = WKWebView(frame: .zero, configuration: webConfiguration)
-               webView!.navigationDelegate = self
-               webView!.uiDelegate = self
-            //WKWebView.clean()
-            view = webView
+       webConfiguration.allowsPictureInPictureMediaPlayback = true
+       webView = WKWebView(frame: .zero, configuration: webConfiguration)
+       webView!.navigationDelegate = self
+       webView!.uiDelegate = self
+        //WKWebView.clean()
+        view = webView
 
         
         
@@ -43,12 +41,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let config = WKWebViewConfiguration()
-//        config.dataDetectorTypes = [.all]
-//        webView = WKWebView(frame: .zero, configuration: config)
-       // let deglaUser = User(name: "Vahan", uuid: "31531e13fgea") //Degla User
-       // let sherifDegla = User(name: "sherif", uuid: "346grs")
-        //let guestUser = User(name: "guest", uuid: "guest")
+        /*
+        let config = WKWebViewConfiguration()
+        config.dataDetectorTypes = [.all]
+        webView = WKWebView(frame: .zero, configuration: config)
+        let deglaUser = User(name: "Vahan", uuid: "31531e13fgea") //Degla User
+        let sherifDegla = User(name: "sherif", uuid: "346grs")
+        let guestUser = User(name: "guest", uuid: "guest")
+        */
         
         setWebView()
 
@@ -84,9 +84,6 @@ class ViewController: UIViewController {
              }
         }
 
-              // webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
-              // webView.configuration.preferences.javaScriptEnabled = true
-               //webView.configuration.preferences.plugInsEnabled = true
        
            print(Constants.selectedUser.name)
         let url = URL(string: "https://backend.shaga3app.com/api/authorize?user_name=\(Constants.selectedUser.name)&user_uuid=\(Constants.selectedUser.uuid)")
@@ -96,8 +93,7 @@ class ViewController: UIViewController {
         request.setValue(Constants.selectedUser.signature, forHTTPHeaderField:"x-auth-signature")
                request.setValue(key, forHTTPHeaderField:"x-shaga3app-id")
                webView.load(request)
-               print(request)
-               print(request.allHTTPHeaderFields)
+              
     }
 
 
@@ -118,9 +114,9 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
-        print(webView.url) //Check redirect after auth
+        //Check redirect after auth
+        print(webView.url?.absoluteString)
         webView.activityIndicatorView.stopAnimating()
-        //self.title = webView.title
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {

@@ -12,18 +12,15 @@ import UIKit
 fileprivate var kActivityIndicatorViewAssociativeKey = "kActivityIndicatorViewAssociativeKey"
 
 extension UIView {
-    
-    
+        
     var activityIndicatorView: UIActivityIndicatorView {
         get {
             guard let activityIndicatorView = getAssociatedObject(&kActivityIndicatorViewAssociativeKey) as? UIActivityIndicatorView else {
                 
-                //let activityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: -40, width: 40, height: 40))
                 let activityIndicatorView = UIActivityIndicatorView(frame: self.bounds)
                 activityIndicatorView.style = .gray
                 activityIndicatorView.color = .gray
                 activityIndicatorView.center = center
-                //activityIndicatorView.frame.y = activityIndicatorView.frame.y - 40
                 activityIndicatorView.hidesWhenStopped = true
                 addSubview(activityIndicatorView)
                 

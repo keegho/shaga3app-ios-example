@@ -64,11 +64,14 @@ override func viewDidLoad() {
      var request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 15)
                
      request.setValue(user.signature, forHTTPHeaderField:"x-auth-signature")
-               request.setValue(key, forHTTPHeaderField:"x-shaga3app-id")
+               request.setValue(key, forHTTPHeaderField:"x-shaga3app-id") //key
 
      webView.load(request)
 }
 ```
+
+Regarding the `key` in the code above will be your own app id in SHAGA3APP that will be generated to you also with the private key *that you will use to generate the signature with in the backend* and will be used with the generated signature in the link headers.
+
 ### Extensions
 Will need to use as mentioned above the delegate functions as an extension in the `UIViewController` to redirect users to your websites and to safari and to show `javascript` alerts as native alerts etc...
 

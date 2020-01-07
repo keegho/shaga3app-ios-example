@@ -1,3 +1,14 @@
+![Imgur Image](http://i.imgur.com/v7KYOxa.png)
+
+</p>
+<p align="center">
+    <a href="" alt="Version">
+        <img src="https://img.shields.io/badge/version-1.0-blue" /></a>
+    <a href="" alt="swift">
+        <img src="https://img.shields.io/badge/Swift-5.1-orange"
+            alt="Swift"></a>
+</p>
+
 # SHAGA3APP SAMPLE iOS
 
 This is the iOS sample code snippet for swift iOS native app users who need to embed the SHAGA3APP competition `webview` to their iOS native apps :iphone:.

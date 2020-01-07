@@ -50,7 +50,7 @@ webView.load(request)
 ```
 
 ## Usage
-Embedding the `webview` to your app is a piece of cake :simple_smile:
+Embedding the `webview` to your app is a piece of cake :smiley:
 
 Just add a `WKWebView` to your `UIViewController` call its delegate functions and request the link above using the correct username, id and signature.
 

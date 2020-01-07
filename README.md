@@ -1,4 +1,6 @@
+<p align="center">
 ![Imgur Image](http://i.imgur.com/U0sYpih.png)
+</p>
 
 </p>
 <p align="center">

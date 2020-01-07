@@ -6,7 +6,7 @@ This is the iOS sample code snippet for swift iOS native app users who need to e
 
 You need first to contact [SHAGA3APP](https://www.shaga3aapp.com) institution to prepare the deal and send them your primary and secondary colors, logos and competition rules and prize logos for each winner. 
 
-Then you will receive a private key where your company will use to create signatures to their users using the app to use the embedded `webview` in your app in an authorized manner and be able to upload videos and join the your own competition.
+Then you will receive a private key where your company will use to create signatures of your users so they start using the embedded `webview` in your app in an authorized manner and be able to upload videos and join your users to your own created competition in your own application.
 
 For generating HMAC signature using your app existing users on your *PHP* backend use [hash_hmac](https://www.php.net/manual/en/function.hash-hmac.php).
 

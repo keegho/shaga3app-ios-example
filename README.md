@@ -1,10 +1,10 @@
 # SHAGA3APP SAMPLE iOS
 
-This is the iOS sample code snippet for swift iOS native app users who need to embed the SHAGA3APP competition `webview` to their iOS native apps.
+This is the iOS sample code snippet for swift iOS native app users who need to embed the SHAGA3APP competition `webview` to their iOS native apps :iphone:.
 
 ## Installation
 
-You need first to contact [SHAGA3APP](https://www.shaga3aapp.com) institution to prepare the deal and send them your primary and secondary colors, logos and competition rules and prize logos for each winner. 
+You need first to contact [SHAGA3APP](https://www.shaga3aapp.com) institution to prepare the deal and send them your primary and secondary colors, logos and competition rules and prize logos for each winner :trophy:. 
 
 Then you will receive a private key where your company will use to create signatures of your users so they start using the embedded `webview` in your app in an authorized manner and be able to upload videos and join your users to your own created competition in your own application.
 
@@ -52,7 +52,7 @@ webView.load(request)
 ## Usage
 Embedding the `webview` to your app is a piece of cake :smiley:
 
-Just add a `WKWebView` to your `UIViewController` call its delegate functions and request the link above using the correct username, id and signature.
+Just add a `WKWebView` to your `UIViewController` call its delegate functions and request the link above using the correct username, id and signature from your user model.
 
 ```swift
 import UIKit
@@ -72,7 +72,7 @@ override func viewDidLoad() {
 }
 ```
 
-Regarding the `key` :key: in the code above will be your own app id in SHAGA3APP that will be generated to you also with the private key *that you will use to generate the signature with in the backend* and will be used with the generated signature in the link headers.
+Regarding the `key` :key: in the code above will be your own app id in SHAGA3APP that will be generated to you also with the private key *that you will use to generate the signature with in the backend* and will be used with the generated signature in the link :link: headers.
 
 ### Extensions
 Will need to use as mentioned above the delegate functions as an extension in the `UIViewController` to redirect users to your websites and to safari and to show `javascript` alerts as native alerts etc...

@@ -15,7 +15,7 @@ This is the iOS sample code snippet for swift iOS native app users who need to e
 
 ## Installation
 
-You need first to contact [SHAGA3APP](https://www.shaga3aapp.com) institution to prepare the deal and send them your primary and secondary colors, logos and competition rules and prize logos for each winner. 
+You need first to contact [SHAGA3APP](https://www.shaga3app.com) institution to prepare the deal and send them your primary and secondary colors, logos and competition rules and prize logos for each winner. 
 
 Then you will receive a private key where your company will use to create signatures to their users using the app to use the embedded `webview` in your app in an authorized manner and be able to upload videos and join the your own competition.
 

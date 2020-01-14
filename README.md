@@ -31,7 +31,7 @@ $secret = "KEY_GENERATED_FROM_THE_BACKEND_ADMIN_PANEL";
 // Where username should represent the user name of the logged in user in the mother app.
 // And the uuid should be a unique value within the mother app.
 // This is in the case of a normal authorized user.
-$string = "/api/authorize?user_name=username&user_uuid=useruuid"
+$string = "/api/authorize?user_name=username&user_uuid=userId&user_phone=phone&user_email=email"
 // If this user is a guest and not authorized we will have to do it so:
 // $string = "/api/authorize?user_name=guest&user_uuid=guest&salt=enter_a_random_string_here"
 $sig = hash_hmac('sha256', $string, $secret);
@@ -46,7 +46,7 @@ const secret = "KEY_GENERATED_FROM_THE_BACKEND_ADMIN_PANEL";
 // Where username should represent the user name of the logged in user in the mother app.
 // And the uuid should be a unique value within the mother app.
 // This is in the case of a normal authorized user.
-const string = "/api/authorize?user_name=username&user_uuid=useruuid"
+const string = ""/api/authorize?user_name=username&user_uuid=userId&user_phone=phone&user_email=email""
 // If this user is a guest and not authorized we will have to do it so:
 // const string = "/api/authorize?user_name=guest&user_uuid=guest&salt=enter_a_random_string_here"
 const signer = crypto.createHmac("sha256", secret);
@@ -64,7 +64,7 @@ So actually what will happen is that the user trying to open the `webview` send 
 ### Example in *swift*:
 
 ```swift
-let url = URL(string: "https://backend.shaga3app.com/api/authorize?user_name=\(user.name)&user_uuid=\(user.uuid)")
+let url = URL(string: "https://backend.shaga3app.com/api/authorize?user_name=\(user.name)&user_uuid=\(user.id)&user_phone=\(user.phone)&user_email=\(user.email)")
                
 var request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 15)
                
@@ -86,7 +86,7 @@ import WebKit
 override func viewDidLoad() {
 
      super.viewDidLoad()
-     let url = URL(string:  "https://backend.shaga3app.com/api/authorize?user_name=\(user.name)&user_uuid=\(user.uuid)")
+     let url = URL(string:  "https://backend.shaga3app.com/api/authorize?user_name=\(user.name)&user_uuid=\(user.id)&user_phone=\(user.phone)&user_email=\(user.email)")
                
      var request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 15)
                
